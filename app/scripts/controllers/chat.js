@@ -35,6 +35,16 @@ angular.module('demoApp')
             })
         }
 
+// assume we have this data: { foo: 10, bar: { hello: "world" } }
+// we will update the child foo by passing a key
+$scope.update = function(key) {
+                sync.$update(key, { object: "updated" });
+            }).then(function(newChildRef) {
+                console.log("added record with id " + newChildRef.key());
+            })
+        }
+// new data: { foo: 10, bar: { hello: "world", count: 20 } }
+
         //Working with Arrays in Firebase
 
         $scope.messages = sync.$asArray();

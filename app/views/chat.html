@@ -1,5 +1,5 @@
 <h1>DEMO TIME!</h1>
-<h4>What's currently in the Firebase Database:</h4>
+<h4>What's currently in $scope:</h4>
 <br>
 <div class="well well-large">
 <font color='blue' size='3'>{{data}}</font>
@@ -15,26 +15,22 @@
 <br>
 
 <h2>Working with Arrays in Firebase</h2>
- <ul>
-      <li ng-repeat="message in messages">
-        <!-- exit a message -->
-        <input ng-model="message.text" ng-change="messages.$save(message)" />
-        <!-- delete message -->
-        <button ng-click="messages.$remove(message)">X</button>
-      </li>
-    </ul>
+
+
     <!-- push a new message into the array -->
     <form ng-submit="addMessage(newMessageText)">
       <input ng-model="newMessageText" />
       <button type="submit">add message</button>
     </form>
+ <!-- AngularFire provides a set of methods compatable with manipulating synchronized arrays: $add(), $save(), and $remove(). -->
+
 
 
 <h1> Anything typed in here is magically saved to Firebase! </h1>
 
   <span class="badge badge-info">3 WAY DATA BINDING</span>  <input type="text" ng-model="sdata.text"/>
   <h2>  All changes from Firebase magically appear here! </h2>
-    <h1>You said: {{ data.text }}</h1>
+    <h1>{{ data.text }}</h1>
 
 
 
