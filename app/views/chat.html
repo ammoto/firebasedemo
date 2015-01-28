@@ -1,0 +1,57 @@
+<h1>DEMO TIME!</h1>
+<h4>What's currently in the Firebase Database:</h4>
+<br>
+<div class="well well-large">
+<font color='blue' size='3'>{{data}}</font>
+<br>
+<!-- <font color='red' size='3'>Arrays: {{array}}</font> -->
+</div>
+
+
+<h2>Basic firebase stuff</h2>
+<button class="btn btn-primary" ng-click="set()">Angularfire $set()</button>
+
+<button class="btn btn-primary" ng-click="push()">Angularfire $push()</button>
+<br>
+
+<h2>Working with Arrays in Firebase</h2>
+ <ul>
+      <li ng-repeat="message in messages">
+        <!-- exit a message -->
+        <input ng-model="message.text" ng-change="messages.$save(message)" />
+        <!-- delete message -->
+        <button ng-click="messages.$remove(message)">X</button>
+      </li>
+    </ul>
+    <!-- push a new message into the array -->
+    <form ng-submit="addMessage(newMessageText)">
+      <input ng-model="newMessageText" />
+      <button type="submit">add message</button>
+    </form>
+
+
+<h1> Anything typed in here is magically saved to Firebase! </h1>
+
+  <span class="badge badge-info">3 WAY DATA BINDING</span>  <input type="text" ng-model="sdata.text"/>
+  <h2>  All changes from Firebase magically appear here! </h2>
+    <h1>You said: {{ data.text }}</h1>
+
+
+
+
+
+
+
+<!-- <h2>Chat</h2>
+
+<form>
+  <input placeholder="Message..." ng-model="newMessage">
+  <button type="submit" ng-click="addMessage(newMessage);newMessage = null;">send</button>
+</form>
+
+<ul id="messages" ng-show="messages.length">
+  <li ng-repeat="message in messages | reverse">{{message.text}}</li>
+</ul>
+
+<p class="alert alert-danger" ng-show="err">{{err}}</p>
+ -->
